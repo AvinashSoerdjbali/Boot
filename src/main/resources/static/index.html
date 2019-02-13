@@ -6,8 +6,9 @@
 </head>
 <body>
 
-<button onclick="versturen()"> Klikt hier voor boten</button>
+<button id = "verhuurbutton"> Klikt hier voor boten</button>
 <input type = text id="bootnaamvak">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
             function versturen(){
@@ -15,8 +16,18 @@
             var bootnaam = document.getElementById ("bootnaamvak").value;
             alert (bootnaam); }
 </script>
+<script> $(document).on('click', '#verhuurbutton', function(){
+        $.ajax({
+        type: "get",
+        url: "/hallo",
+        success: function (result){
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+alert(result);
+}
+});
+});
+</script>
+
 </body>
 </html>
 

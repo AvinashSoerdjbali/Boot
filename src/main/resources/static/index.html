@@ -8,6 +8,7 @@
 
 <button id = "verhuurbutton"> Klikt hier voor boten</button>
 <input type = text id="bootnaamvak">
+<div id="naamschip">antwoord</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
@@ -21,11 +22,14 @@
         type: "get",
         url: "/hallo",
         success: function (result){
-
-alert(result);
+            returnfunctie(result);
 }
 });
 });
+        function returnfunctie(antwoordserver){
+        $('#naamschip').html(antwoordserver.naam);
+            alert(antwoordserver);
+}
 </script>
 
 </body>
